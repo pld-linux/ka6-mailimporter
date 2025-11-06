@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	25.08.2
+%define		kdeappsver	25.08.3
 %define		kframever	5.94.0
 %define		qtver		5.15.2
 %define		kaname		mailimporter
 Summary:	mailimporter
 Name:		ka6-%{kaname}
-Version:	25.08.2
-Release:	2
+Version:	25.08.3
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Applications
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	c849a9fc57a4ca5b15be736ebecfd96f
+# Source0-md5:	5e07703693ea3da015f47cd315159199
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel >= 5.11.1
@@ -93,9 +93,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libKPim6MailImporter.so.*.*
+%{_libdir}/libKPim6MailImporter.so.*.*
 %ghost %{_libdir}/libKPim6MailImporter.so.6
-%attr(755,root,root) %{_libdir}/libKPim6MailImporterAkonadi.so.*.*
+%{_libdir}/libKPim6MailImporterAkonadi.so.*.*
 %ghost %{_libdir}/libKPim6MailImporterAkonadi.so.6
 %{_datadir}/qlogging-categories6/mailimporter.categories
 %{_datadir}/qlogging-categories6/mailimporter.renamecategories
